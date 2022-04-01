@@ -2,7 +2,7 @@
 /* Vamos a usar el * para darle letra Calibri a todos */
 *{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;   
-    overflow: auto; 
+   /* overflow: auto; es incompatible con el sticky*/
 }
 
 nav{
