@@ -1,0 +1,88 @@
+
+/* Vamos a usar el * para darle letra Calibri a todos */
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;   
+    overflow: auto; 
+}
+
+nav{
+    background-color:#6987BF;
+    padding: 5px;
+}
+
+body{
+    background-image: url("firenze.jpg");
+}
+
+.boton{
+    height:30px;    
+    font-size: 24 px; /*esto no anda */
+}
+
+footer{  
+    text-align:  center; 
+    color:purple;  
+}
+
+h1, h2, h3, header {
+    background-color: rgb(182, 110, 230); 
+    text-align:  center; 
+    font-size: strong;
+}
+
+table  { 
+    border-width: 4;
+    border-collapse: separate;
+    background-color: rgba(247, 221, 173);
+    /*  background-color: rgb(247, 221, 173); */
+   color: rgba(0, 0, 128, 0.801); 
+  /* color:rgb(231, 48, 48);*/
+  /*color: rgb(243, 73, 73);*/
+}
+
+td {
+       padding: 3px;
+  }
+
+  /*
+ .pizza{
+    background-image: url("pizzas.jpg");
+    /*color: rgb(121, 216, 253);*/
+   /* font-weight: bold;*/
+    /*-webkit-text-fill-color: rgb(121, 216, 253);*/
+    -webkit-text-fill-color:white;
+/*-webkit-text-stroke: 1px white;
+ }  
+*/
+
+  p{
+    background-color: pink;
+    text-align: justify;
+}
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+  fieldset{
+    border: solid 2px navy;  
+    align-items:left;
+ }
+
+ #white{
+      color: navy;   
+      font-display: strong;
+     /* background-color: #6987BF;*/
+  }
+
+  input[type=range] {
+  background-color: green;
+  }
+
+  div.sticky {
+    position: sticky;
+    top: 0;             /*Probar con otros bordes y ver que ocurre! */
+    padding: 5px;
+    background-color: #cae8ca;
+    border: 2px solid #4CAF50;
+    }
