@@ -86,3 +86,8 @@ a:link, a:visited, a:active {
     background-color: #cae8ca;
     border: 2px solid #4CAF50;
     }
+
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
