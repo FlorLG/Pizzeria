@@ -22,6 +22,11 @@ body{
 footer{  
     text-align:  center; 
     color:purple;  
+    white-space: pre-wrap; /*agrega espacios entre cada oración*/
+    background-color: lavender;
+    /*position: absolute;*/
+    bottom: 0;
+    width: 100%;
 }
 
 h1, h2, h3, header {
@@ -44,18 +49,7 @@ td {
        padding: 3px;
   }
 
-  /*
- .pizza{
-    background-image: url("pizzas.jpg");
-    /*color: rgb(121, 216, 253);*/
-   /* font-weight: bold;*/
-    /*-webkit-text-fill-color: rgb(121, 216, 253);*/
-    -webkit-text-fill-color:white;
-/*-webkit-text-stroke: 1px white;
- }  
-*/
-
-  p{
+   p{
     background-color: pink;
     text-align: justify;
 }
@@ -91,3 +85,45 @@ a:link, a:visited, a:active {
         max-width: 100%;
         height: auto;
     }
+
+    .escalar img{        
+        width: 25%;
+        display: block; 
+        margin: auto;
+    } 
+
+    .escalar img:hover{
+        transform: scale(1.1, 1.1);
+    }
+
+     /*
+ .pizza{
+    background-image: url("pizzas.jpg");
+    /*color: rgb(121, 216, 253);*/
+   /* font-weight: bold;*/
+    /*-webkit-text-fill-color: rgb(121, 216, 253);*/
+    -webkit-text-fill-color:white;
+/*-webkit-text-stroke: 1px white;
+ }  
+*/
+
+@media only screen and (max-width: 600px) {
+    h3 {font-size: 18px;}
+    p { font-size: 14px;};
+}
+
+/* Pantallas a partir de 600 píxeles 
+(Ancho como mínimo de 600px)*/
+@media only screen and (min-width: 600px) {
+    h3 {font-size: 20px;};
+    p { font-size: 16px;};
+    }
+
+/* Pantallas de mas de 600 y menos de 768 píxeles */
+/*(Ancho como mínimo de 768px)*/
+@media only screen and (min-width: 1024px) {
+    h3 {font-size: 22px;}
+    p { font-size: 18px;};
+    
+}
+    
