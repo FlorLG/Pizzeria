@@ -83,8 +83,10 @@ a:link, a:visited, a:active {
     position: sticky;
     top: 0;             /*Probar con otros bordes y ver que ocurre! */
     padding: 5px;
-    background-color: #cae8ca;
-    border: 2px solid #4CAF50;
+  /*  background-color: #cae8ca;
+    border: 2px solid #4CAF50;*/
+    border: 8px double #da2f38;
+    background-color: rgb(166, 216, 166);
     }
 
     iframe {
