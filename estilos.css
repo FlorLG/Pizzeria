@@ -49,10 +49,16 @@ td {
        padding: 3px;
   }
 
-   p{
+  div  p{
     background-color: pink;
     text-align: justify;
+    padding: 15px;
+  /*  max-width: 1250px;*/
+    align-content: center;
 }
+
+
+
 
 a:link, a:visited, a:active {
     text-decoration:none;
@@ -90,12 +96,92 @@ a:link, a:visited, a:active {
         width: 25%;
         display: block; 
         margin: auto;
+        padding: 20px;
     } 
 
+ /*   .escalar{
+        text-align: center;
+        margin: auto;
+        padding: 20px;
+        
+    }
+*/
     .escalar img:hover{
         transform: scale(1.1, 1.1);
     }
 
+    /*
+    .flex-container{
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        float: right;
+        padding: 10px;
+        font-size: 30px;
+        background: #C70039;
+        align-items: center;
+        max-width: 100px;
+        max-height: 900px;
+    }
+
+    .item{
+           align-content: center;
+           text-align: center;
+    }
+*/
+    .padre{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .articulo, .derecha, .footer{
+        flex-grow: 1;     /* Todo crece hasta ocupar el ancho disponible */
+        flex-basis: 100%; /* Tamaño por defecto: 100% */
+        padding: 10px;
+    }
+
+    .derecha{
+        background: #C70039;
+        animation-name: blink;
+        animation-duration: 1.5s;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
+        text-align: center;
+        /*margin: auto;*/
+        align-items: space-around;
+    }
+
+
+    .articulo > p {
+        padding: 20px;
+    }
+
+    @keyframes blink {
+        from { background-color:  #C70039;}
+        to { background-color: #900C3F;}     
+    }
+
+    /* media queries */
+/* tamaño tablet */
+@media all and (min-width: 600px){
+    .derecha{
+        /* flex: <flex-grow> <flex-shrink> <flex-basis> */
+        flex: 1 1 auto; /* <flex-grow> <flex-shrink> <flex-
+        basis>*/        
+        max-width: 20%;
+    }
+}
+
+
+/* tamaño pc */
+@media all and (min-width: 601px){
+    .articulo{flex:2 0;}  /* <flex-grow> <flex-shrink> */    
+    .derecha{order: 3;}
+    .footer{order: 4;}
+}
      /*
  .pizza{
     background-image: url("pizzas.jpg");
