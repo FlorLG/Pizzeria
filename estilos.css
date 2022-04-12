@@ -154,7 +154,10 @@ a:link, a:visited, a:active {
         animation-iteration-count: infinite;
         text-align: center;
         /*margin: auto;*/
-        align-items: space-around;
+        align-items: center;   /* space-around; */
+       /* align-self: center;  /*centra el texto, peor me achica la publicidad*/
+       padding: 60px;  /*para centrar el texto*/
+       
     }
 
 
