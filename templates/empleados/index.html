@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Incluimos la referencia al archivo CSS-->
+    <link rel="stylesheet" href="estilos.css">
+    
+    <title>Registrate</title>
+    <!-- Incluyo link a los íconos font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<header>
+    <h1> 
+        <img src = "pizzero2.png" height="40">
+        <b> Pizzería Firenze </b>  
+        <img src = "pizzero2.png" height="40"> </h1>
+
+<nav>
+    <button align="left" class="boton"> <a href="Menu.html">
+            <font COLOR="green"> Menú </font>
+        </a> </align> </button>
+    <button align="center" class="boton"> <a href="Donde estamos.html">
+            <font COLOR="orange"> Dónde estamos</font>
+        </a> </align> </button>
+    <button align="right" class="boton"> <a href="Contactanos.html">
+            <font COLOR="blue"> Contactanos </font>
+        </a> </align> </button>
+    <button align="right" class="boton"> <a href="Pedidos.html">
+            <font COLOR="coral"> Pedidos </font>
+        </a> </align> </button>
+    <button align="right" class="boton"> <a href="Pedidos2.html">
+            <font COLOR="navy"> Pedidos Std </font>
+        </a> </align> </button>
+</nav>
+</header>
+
+ <!-- 
+{% include 'header.html' %}
+-->
+
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+          <!--  <th>Foto</th> --> 
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Acciones</th> 
+        </tr>
+    </thead>
+    <tbody>
+        {% for empleado in empleados %}
+        <tr>
+            <td>{{empleado[0]}}</td>
+         <!--   <td>
+                <img class="img-thumbnail" width="100" src="uploads/{{empleado[3]}}" alt="foto empleado">
+            </td> --> 
+            <td>{{empleado[1]}}</td>
+            <td>{{empleado[2]}}</td>
+            <td><a href="/edit/{{empleado[0]}}">Editar</a> |
+                <a href="/destroy/{{empleado[0]}}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- 
+{% include 'footer.html' %}  
+-->
+
+<footer align="center">
+    Buenos Aires, Argentina <br>
+    Copyright 2022 <br>
+    Whatsapp: <i class="fa fa-whatsapp" style="font-size:24px;color:aquamarine"></i> <br>
+</footer>
+
+</html>
