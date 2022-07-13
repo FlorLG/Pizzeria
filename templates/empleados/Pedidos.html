@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Incluimos la referencia al archivo CSS-->
+    <link rel="stylesheet" href="estilos.css">
+
+    <script src="pedidos.js"></script>
+    <title>Pedidos</title>
+    <!-- Incluyo link a los íconos font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<header>
+    <h1>
+        <img src="pizzero2.png" height="40">
+        <b> Pizzería Firenze </b>
+        <img src="pizzero2.png" height="40">
+    </h1>
+
+    <nav>
+        <button align="left" class="boton"> <a href="Menu.html">
+                <font COLOR="green"> Menú </font>
+            </a> </align> </button>
+            <button align="center" class="boton"> <a href="index.html">
+                <font COLOR="orange"> Quiénes Somos</font>
+            </a> </align> </button>
+        <button align="center" class="boton"> <a href="Donde estamos.html">
+                <font COLOR="orange"> Dónde estamos</font>
+            </a> </align> </button>
+        <button align="right" class="boton"> <a href="Contactanos.html">
+                <font COLOR="blue"> Contactanos </font>
+            </a> </align> </button>
+        <button align="right" class="boton"> <a href="Pedidos2.html">
+                <font COLOR="navy"> Pedidos Std </font>
+            </a> </align> </button>
+    </nav>
+</header>
+
+<body text="MediumBlue">
+
+    <form action="mostrar_datos.html" target="_blank" style="background-color:lightpink">
+
+        <!-- Ingreso del Pedido -->
+        <section id=" white"></section>
+
+        <fieldset>
+            <!--
+            <div v-for="(a,index) in test_template" class="row">            
+                <input type="hidden" :name="'segment[' + index + '][nb]'" :value="a.nb">
+              </div>
+            -->
+
+            <div id="pedidos">
+                <h1> {{ titulo }}</h1>
+                <!-- v-model -->
+                <!-- El valor que se ingrese en el input va a reemplazr a la propiedad nuevaPizza -->
+                <label> Seleccione productos del listado o ingrese producto manualmente: </label>
+                <ul>
+                    <!-- Recorre cada pizza en el array de pizzas, tengo que agregar name=pizzaCantidad para que lo tome mostrar_datos-->
+                    <!-- <input type = "textt" name="pizzaSabor" > -->
+                    <!--   
+                        <li v-for="(pizza, index) in pizzas">
+                        {{ pizza.nombre }}    - <input type="number" v-model.number="pizza.cantidad" :name="'segment[' + index + '][nb]'"  >
+                         name="pizzaCantidad" -->
+                    
+                    <li v-for="pizza in pizzas">
+                        {{ pizza.nombre }}    - <input type="number" v-model.number="pizza.cantidad" name="pizzaCantidad">
+                        <button @click=pizza.cantidad++>+</button>
+                        <button @click=pizza.cantidad-->-</button>
+                     <!-- {{pizza.sabor}} <input type="text" v.model.text="pizza.sabor" name ="pizzaSabor">
+                        {{pizza.cant}}  <input type="number" v.model.number="pizza.number" name ="pizzaCant">  -->
+                    </li>
+                </ul>
+                <label for="Lista del Pedido">Ingrese otro producto que desea pedir: </label>
+               <!-- tengo que agregar name=pizzaOempanada para que lo tome mostrar_datos -->
+                <input type="text" v-model="nuevaPizza" name="pizzaOempanada">
+                <button v-on:click=agregarPizzaConIF()>Agregar al pedido</button>
+                <h4>Total: {{sumarPizzas}}</h4>
+            </div>
+            <br><br>
+        </fieldset>
+
+        <h3> Datos personales</h3>
+        <fieldset>
+            <legend>Dirección de envío del Pedido</legend>
+            <label for="nombre">Nombre: </label>
+            <input size="30" type="text" name="nombre" placeholder="Ingrese su nombre aqui..." required>
+            <br><br>
+
+            <!-- Ingreso de la dirección -->
+            <label for="direccion">Calle: </label>
+            <input size="20" type="text" name="direccion" placeholder="Ingrese su dirección aqui..." required>
+
+            <label for="dirnumero">Número: </label>
+            <input size="6" type="number" name="dirnumero" placeholder="Ingrese su número aqui..." required>
+            <br>
+            <br>
+            <label for="piso">Piso: </label>
+            <input size="4" type="number" name="piso">
+
+            <label for="departamento">Dpto: </label>
+            <input size="4" type="text" name="departamento">
+            <br><br>
+
+            <!-- Seleccion de la zona -->
+            Seleccione Barrio:
+            <select name="zona"">
+                <option>Recoleta</option>            
+                <option>San Cristóbal</option>
+                <option>Boedo</option>
+            </select>
+            <br><br>
+        </fieldset>
+        <br>
+
+       <!--  <section id=" white"> -->
+                <fieldset>
+
+                    <legend>Datos de contacto</legend>
+                    <!-- Ingreso Teléfono -->
+                    <label for=" telefono">Celular: </label>
+                    <i class="fa fa-whatsapp" style="font-size:24px;color:rgb(4, 100, 4)"></i>
+
+                    <input size="20" type="number" name="telefono" placeholder="Ingrese su celular aqui..." required>
+
+                </fieldset>
+                <br>
+                <!-- Selección de intereses -->
+
+                <!-- Satisfcción con el Servicio -->
+                <fieldset>
+                    <label for="points">Satisfacción con el servicio:</label>
+                    <input type="range" id="points" name="points" min="0" max="10" step=1 value="8"
+                        border-color="background-color:navy">
+                    <br><br>
+                </fieldset>
+                <br>
+
+                <!-- Comentario -->
+                <fieldset>
+                    <label for="comentario">Comentario:</label><br>
+                    <textarea name="comentario" id="comentario" cols="60" rows="5"></textarea>
+                    <br><br>
+                </fieldset>
+                <br>
+
+                <!-- Botones para controlar el formulario -->
+                <input type="reset" value="Borrar formulario">
+                <input type="submit" value="Enviar datos">
+                <br><br>
+                </section>
+
+                <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+                <script src="pedidos.js"></script>
+
+    </form>
+
+    <footer align="center">
+        Buenos Aires, Argentina <br>
+        Copyright 2022 <br>
+        Whatsapp: <i class="fa fa-whatsapp" style="font-size:24px;color:aquamarine"></i> <br>
+    </footer>
+
+</body>
+
+</html>

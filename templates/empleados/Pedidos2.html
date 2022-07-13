@@ -1,0 +1,121 @@
+<!-- //html:5  (se escribe en minúscula)-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Incluimos la referencia al archivo CSS-->
+   <!-- <link rel="stylesheet" href="test.css"> -->
+    <link rel="stylesheet" href="estilos.css">
+    <title> Pizzería Firenze - Pedido </title>
+    <link rel="icon" href="favicon pizzeria.ico">
+    <!-- Incluyo link a los íconos font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<header>
+    <h1>
+        <img src="pizzero2.png" height="40">
+        <b> Pizzería Firenze </b>
+        <img src="pizzero2.png" height="40">
+    </h1>
+    <nav>
+
+        <button align="left" class="boton"> <a href="Menu.html">
+                <font COLOR="green"> Menú </font>
+            </a> </align> </button>
+        <button align="center" class="boton"> <a href="index.html">
+                <font COLOR="orange"> Quiénes Somos</font>
+            </a> </align> </button>
+        <button align="center" class="boton"> <a href="Donde estamos.html">
+                <font COLOR="orange"> Dónde estamos</font>
+            </a> </align> </button>
+        <button align="right" class="boton"> <a href="Contactanos.html">
+                <font COLOR="blue"> Contactanos </font>
+            </a> </align> </button>
+        <button align="right" class="boton"> <a href="Pedidos.html">
+                <font COLOR="coral"> Pedidos </font>
+            </a> </align> </button>
+        
+    </nav>
+</header>
+<body>
+
+
+    <div id="app">
+        <div class="header">
+            <h3> Resumen de su Pedido</h3>
+           
+            <div>
+                <button @click="showCart = !showCart" v-show="!verified"> Clickear para Ver Carrito: 
+                
+                    {{ items.length + (items.length > 1 || items.length === 0 ? " items" : " item") }}
+                </button>
+            </div>
+        </div>
+        <div class="cart" v-show="showCart">
+            <div v-show="items.length > 0">
+                <ul>
+                    <li v-for="item in items" transition="fade">
+                        <p><strong>{{ item.quantity }}</strong> - {{ item.name }} <i class="fa fa-trash"
+                                @click="removeFromCart(item)"></i></p>
+                    </li>
+                </ul>
+                <div><button @click="verified = true, showCart = true">Comprar</button></div>
+            </div>
+            <div v-show="items.length === 0">
+                <p>Aún no pidió nada!</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="shop" v-show="!verified">
+                <h3>Elija lo que desea ordenar:</h3>
+                <ul>
+                    <li v-for="item in shop">
+                        <div>
+                            <h5>{{ item.name }}</h5>
+                            <p>${{ item.price }}</p>
+                            <button @click="addToCart(item)">Agregar al Pedido</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="checkout" v-show="verified">
+                <h3>Resumen de su Compra: </h3>
+
+                <form action="mostrar_datos.html" target="_blank" style="background-color:lightpink">
+
+                    <h5 v-for="item in items"><strong>{{ item.quantity }}</strong> - {{ item.name }}<span>${{ item.price
+                            * item.quantity }}</span></h5>
+                    <hr />
+                    <div class="row">
+                        <div class="u-pull-right">
+                            <h5>Total: <span>{{ total | currency }}</span></h5>
+
+                            <input type="submit" value="Enviar Pedido" style="background-color:lightpink;">
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="pedidos2.js"></script>
+
+    </form>
+
+</body>
+
+<footer align="center">
+    Buenos Aires, Argentina <br>
+    Copyright 2022 <br>
+    Whatsapp: <i class="fa fa-whatsapp" style="font-size:24px;color:aquamarine"></i> <br>
+</footer>
+
+</html>

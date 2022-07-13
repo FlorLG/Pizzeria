@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Incluimos la referencia al archivo CSS-->
+    <link rel="stylesheet" href="estilos.css">
+    
+    <title>Registrate</title>
+    <!-- Incluyo link a los íconos font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<header>
+    <h1> 
+        <img src = "pizzero2.png" height="40">
+        <b> Pizzería Firenze </b>  
+        <img src = "pizzero2.png" height="40"> </h1>
+
+<nav>
+    <button align="left" class="boton"> <a href="Menu.html">
+            <font COLOR="green"> Menú </font>
+        </a> </align> </button>
+    <button align="center" class="boton"> <a href="Donde estamos.html">
+            <font COLOR="orange"> Dónde estamos</font>
+        </a> </align> </button>
+    <button align="right" class="boton"> <a href="Contactanos.html">
+            <font COLOR="blue"> Contactanos </font>
+        </a> </align> </button>
+    <button align="right" class="boton"> <a href="Pedidos.html">
+            <font COLOR="coral"> Pedidos </font>
+        </a> </align> </button>
+    <button align="right" class="boton"> <a href="Pedidos2.html">
+            <font COLOR="navy"> Pedidos Std </font>
+        </a> </align> </button>
+</nav>
+</header>
+
+<body  text="MediumBlue">
+
+    <h3>Registrate para recibir descuentos exclusivos de Pizzería Firenze</h3>
+
+    <form action="mostrar_datos.html" target="_blank" style="background-color:lightpink">
+        <!-- Ingreso del nombre -->
+
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="nombre">Nombre: </label>
+            <input size="30" type="text" name="nombre" placeholder="Ingrese su nombre aqui..." required>
+            <br><br>
+
+            <!-- Ingreso del apellido -->
+            <label for="apellido">Apellido: </label>
+            <input size="30" type="text" name="apellido" placeholder="Ingrese su apellido aqui..." required>
+            <br><br>
+
+            <!-- Ingreso Fecha de nacimiento -->
+            <label for="fecha">Fecha de cumpleaños: </label>
+            <input type="date" name="fecha">
+            <br><br>
+
+            <!-- Ingreso de la dirección -->
+            <label for="direccion">Calle: </label>
+            <input size="20" type="text" name="direccion">
+
+            <label for="dirnumero">Número: </label>
+            <input size="6" type="number" name="dirnumero">
+            <br>
+            <br>
+            <label for="piso">Piso: </label>
+            <input size="4" type="number" name="piso">
+
+            <label for="departamento">Dpto: </label>
+            <input size="4" type="text" name="departamento">
+            <br><br>
+
+            <!-- Seleccion de la zona -->
+            Seleccione Barrio:
+            <select name="zona"">
+                <option>Recoleta</option>            
+                <option>San Cristóbal</option>
+                <option>Boedo</option>
+            </select>
+            <br><br>
+        </fieldset>
+        <br>
+
+        <section id="white" >
+                <fieldset>
+
+                    <legend>Datos de contacto</legend>
+                    <!-- Ingreso Teléfono -->
+                    <label for=" telefono">Celular: </label>
+                    <i class="fa fa-whatsapp" style="font-size:24px;color:rgb(4, 100, 4)"></i>
+
+                    <input size="20" type="number" name="telefono">
+
+                    <!-- Ingreso de la dirección de correo-->
+                    <label for="email">E-mail: </label>
+                    <input type="email" name="email" placeholder="Ingrese su e-mail aqui..." required>
+                    <br><br>
+
+                    <!-- Usuario y contraseña -->
+                    <label for="user">Usuario: </label>
+                    <input size="10" type="text" name="user">
+                    <label for="pass">Clave: </label>
+                    <input size="10" type="password" name="pass">
+                    <br><br>
+                </fieldset>
+                <br>
+                <!-- Selección de intereses -->
+                <fieldset>
+                    <legend>Pizzas Favoritas</legend>
+                    <input type="checkbox" id="pizzas" name="Muzzarella" value="Muzzarella">
+                    <label for="Muzzarella">Muzzarella</label>
+
+                    <input type="checkbox" id="pizzas" name="Napolitana" value="Napolitana">
+                    <label for="Napolitana">Napolitana</label>
+
+                    <input type="checkbox" id="pizzas" name="Fugazzetta" value="Fugazzetta">
+                    <label for="Fugazzetta">Fugazzetta</label>
+
+                    <input type="checkbox" id="pizzas" name="otros" value="otros">
+                    <label for="otros">Otros</label>
+                    <br><br>
+                </fieldset>
+                <br>
+
+                <!-- Satisfcción con el Servicio -->
+                <fieldset>
+                    <label for="points">Satisfacción con el servicio:</label>
+                    <input type="range" id="points" name="points" min="0" max="10" step=1 value="8" 
+                    border-color="background-color:navy">
+                    <br><br>
+                </fieldset>
+                <br>
+
+                <!-- Comentario -->
+                <fieldset>
+                    <label for="comentario">Comentario:</label><br>
+                    <textarea name="comentario" id="comentario" cols="60" rows="5"></textarea>
+                    <br><br>
+                </fieldset>
+                <br>
+
+                <!-- Botones para controlar el formulario -->
+                <input type="reset" value="Borrar formulario">
+                <input type="submit" value="Enviar datos">
+                <br><br>
+        </section>
+    </form>
+
+
+</body>
+
+<footer align="center">
+    Buenos Aires, Argentina <br>
+    Copyright 2022 <br>
+    Whatsapp: <i class="fa fa-whatsapp" style="font-size:24px;color:aquamarine"></i> <br>
+</footer>
+
+</html>

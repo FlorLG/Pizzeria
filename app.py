@@ -91,6 +91,34 @@ def edit(id):
     conn.commit()
     return render_template('empleados/edit.html', empleados=empleados)
 
+# Función para editar un registro
+@app.route('/menu')
+def menu():
+    return render_template('empleados/Menu.html')    
+
+@app.route('/contactanos')
+def contactanos():
+    return render_template('empleados/Contactanos.html')        
+
+@app.route('/donde_estamos')
+def contactanos():
+    return render_template('empleados/Donde estamos.html') 
+
+@app.route('/formulario_contacto')
+def contactanos():
+    return render_template('empleados/FormularioContacto.html') 
+
+@app.route('/mostrar_datos')
+def contactanos():
+    return render_template('empleados/mostrar_datos.html') 
+
+@app.route('/pedidos')
+def contactanos():
+    return render_template('empleados/Pedidos.html') 
+
+@app.route('/pedidos2')
+def contactanos():
+    return render_template('empleados/Pedidos2.html') 
 #--------------------------------------------------------------------
 # Función para actualizar los datos de un registro
 @app.route('/update', methods=['POST'])

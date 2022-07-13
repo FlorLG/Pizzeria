@@ -1,0 +1,221 @@
+
+/* Vamos a usar el * para darle letra Calibri a todos */
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;   
+   /* overflow: auto; es incompatible con el sticky*/
+}
+
+nav{
+    background-color:#6987BF;
+    padding: 5px;
+}
+
+body{
+    background-image: url("firenze.jpg");
+}
+
+.boton{
+    height:30px;    
+    font-size: 24 px; /*esto no anda */
+}
+
+footer{  
+    text-align:  center; 
+    color:purple;  
+    white-space: pre-wrap; /*agrega espacios entre cada oración*/
+    background-color: lavender;
+    /*position: absolute;*/
+    bottom: 0;
+    width: 100%;
+}
+
+h1, h2, h3, header {
+    background-color: rgb(182, 110, 230); 
+    text-align:  center; 
+    font-size: strong;
+}
+
+table  { 
+    border-width: 4;
+    border-collapse: separate;
+    background-color: rgba(247, 221, 173);
+    /*  background-color: rgb(247, 221, 173); */
+   color: rgba(0, 0, 128, 0.801); 
+  /* color:rgb(231, 48, 48);*/
+  /*color: rgb(243, 73, 73);*/
+}
+
+td {
+       padding: 3px;
+  }
+
+  div  p{
+    background-color: pink;
+    text-align: justify;
+    padding: 15px;
+  /*  max-width: 1250px;*/
+    align-content: center;
+}
+
+
+
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+  fieldset{
+    border: solid 2px navy;  
+    align-items:left;
+ }
+
+ #white{
+      color: navy;   
+      font-display: strong;
+     /* background-color: #6987BF;*/
+  }
+
+  input[type=range] {
+  background-color: green;
+  }
+
+  div.sticky {
+    position: sticky;
+    top: 0;             
+    padding: 5px;
+  /*  background-color: #cae8ca;
+    border: 2px solid #4CAF50;  */
+    background-color: rgb(166, 216, 166);
+    border: 8px double #da2f38;
+    }
+
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .escalar img{        
+        width: 25%;
+        display: block; 
+        margin: auto;
+        padding: 20px;
+    } 
+
+ /*   .escalar{
+        text-align: center;
+        margin: auto;
+        padding: 20px;
+        
+    }
+*/
+    .escalar img:hover{
+        transform: scale(1.1, 1.1);
+       
+    }
+
+    /*
+    .flex-container{
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        float: right;
+        padding: 10px;
+        font-size: 30px;
+        background: #C70039;
+        align-items: center;
+        max-width: 100px;
+        max-height: 900px;
+    }
+
+    .item{
+           align-content: center;
+           text-align: center;
+    }
+*/
+    .padre{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .articulo, .derecha, .footer{
+        flex-grow: 1;     /* Todo crece hasta ocupar el ancho disponible */
+        flex-basis: 100%; /* Tamaño por defecto: 100% */
+        padding: 10px;
+    }
+
+    .derecha{
+        background: #C70039;
+        animation-name: blink;
+        animation-duration: 1.5s;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
+        text-align: center;
+        /*margin: auto;*/
+        align-items: center;   /* space-around; */
+       /* align-self: center;  /*centra el texto, peor me achica la publicidad*/
+       padding: 60px;  /*para centrar el texto*/
+       
+    }
+
+
+    .articulo > p {
+        padding: 20px;
+    }
+
+    @keyframes blink {
+        from { background-color:  #C70039;}
+        to { background-color: #900C3F;}     
+    }
+
+    /* media queries */
+/* tamaño tablet */
+@media all and (min-width: 600px){
+    .derecha{
+        /* flex: <flex-grow> <flex-shrink> <flex-basis> */
+        flex: 1 1 auto; /* <flex-grow> <flex-shrink> <flex-
+        basis>*/        
+        max-width: 20%;
+    }
+}
+
+
+/* tamaño pc */
+@media all and (min-width: 601px){
+    .articulo{flex:2 0;}  /* <flex-grow> <flex-shrink> */    
+    .derecha{order: 3;}
+    .footer{order: 4;}
+}
+     /*
+ .pizza{
+    background-image: url("pizzas.jpg");
+    /*color: rgb(121, 216, 253);*/
+   /* font-weight: bold;*/
+    /*-webkit-text-fill-color: rgb(121, 216, 253);*/
+    -webkit-text-fill-color:white;
+/*-webkit-text-stroke: 1px white;
+ }  
+*/
+
+@media only screen and (max-width: 600px) {
+    h3 {font-size: 18px;}
+    p { font-size: 14px;};
+}
+
+/* Pantallas a partir de 600 píxeles 
+(Ancho como mínimo de 600px)*/
+@media only screen and (min-width: 600px) {
+    h3 {font-size: 20px;};
+    p { font-size: 16px;};
+    }
+
+/* Pantallas de mas de 600 y menos de 768 píxeles */
+/*(Ancho como mínimo de 768px)*/
+@media only screen and (min-width: 1024px) {
+    h3 {font-size: 22px;}
+    p { font-size: 18px;};
+    
+}
+    
